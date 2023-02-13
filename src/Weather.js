@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import Forecast from "./Forecast";
 import "./App.css";
 
 function Weather() {
@@ -12,7 +11,7 @@ function Weather() {
   ]);
   let [weather, setWeather] = useState({});
   useEffect(() => {
-    getCurrentCityWeather("Lisbon");
+    return getCurrentCityWeather("Lisbon");
   }, []);
 
   let apiKey = "a78075e9e54bb7f4634858f9d04d965c";
