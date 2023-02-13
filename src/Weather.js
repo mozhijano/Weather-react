@@ -10,9 +10,6 @@ function Weather() {
     { id: 4, name: "San Francisco" },
   ]);
   let [weather, setWeather] = useState({});
-  useEffect(() => {
-    return getCurrentCityWeather("Lisbon");
-  }, []);
 
   let apiKey = "a78075e9e54bb7f4634858f9d04d965c";
 
@@ -35,10 +32,6 @@ function Weather() {
     ];
     return days[day] + " " + hours + ":00";
   }
-  // function getForecast(coordinates) {
-  //   let apiForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.coord.lat}&lon=${coordinates.coord.lon}&appid=${apiKey}&units=metric`;
-  //   axios.get(apiForecastUrl).then(<Forecast response={coordinates} />);
-  // }
 
   function showTemperature(response) {
     setWeather({
@@ -60,6 +53,11 @@ function Weather() {
   function getCityName(event) {
     setCity(event.target.value);
   }
+
+  useEffect(() => {
+    return getCurrentCityWeather("Lisbon");
+  }, []);
+
   let form = (
     <form className="form-css" id="search-form" onSubmit={handleSubmit}>
       <div className="row">
@@ -119,12 +117,6 @@ function Weather() {
         </div>
         <div className="row weather-info">
           <div className="col-1">
-            {/* <img
-              src="http://openweathermap.org/img/wn/01d@2x.png"
-              alt=""
-              className="weather-icon"
-              id="weather-icon"
-            /> */}
             <img src={weather.icon} alt={weather.description} />
           </div>
           <div className="col-7 text-start">
@@ -154,9 +146,7 @@ function Weather() {
           </div>
         </div>
 
-        <div id="forecast" className="mt-5">
-          {/* if(loaded) {<Forecast />} */}
-        </div>
+        <div id="forecast" className="mt-5"></div>
         <div className="footer">
           <a
             href="https://github.com/mozhijano/Weather-react"
