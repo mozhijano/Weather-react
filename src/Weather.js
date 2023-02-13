@@ -89,7 +89,7 @@ function Weather() {
       <div className="weather">
         {city.map((c, index) => (
           <span className="city" key={index}>
-            <a href="#" onClick={handleSubmit} id={c.id}>
+            <a href="/" onClick={handleSubmit} id={c.id}>
               {c.name}
             </a>
           </span>
