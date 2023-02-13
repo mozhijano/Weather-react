@@ -163,7 +163,11 @@ function Weather() {
           {/* if(loaded) {<Forecast />} */}
         </div>
         <div className="footer">
-          <a href="/" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/mozhijano/Weather-react"
+            target="_blank"
+            rel="noreferrer"
+          >
             Open-source code
           </a>
           by Mozhgan Janoosepah
