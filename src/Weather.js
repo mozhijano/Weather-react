@@ -55,7 +55,8 @@ function Weather() {
   }
 
   useEffect(() => {
-    return getCurrentCityWeather("Lisbon");
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=Lisbon&appid=${apiKey}&units=metric`;
+    axios.get(url).then(showTemperature);
   }, []);
 
   let form = (
