@@ -11,7 +11,9 @@ function Weather() {
     { id: 4, name: "San Francisco" },
   ]);
   let [weather, setWeather] = useState({});
-  //let [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    getCurrentCityWeather("Lisbon");
+  }, []);
 
   let apiKey = "a78075e9e54bb7f4634858f9d04d965c";
 
@@ -49,10 +51,6 @@ function Weather() {
       description: response.data.weather[0].description,
       currentDay: response.data.dt,
     });
-    // if (loaded) {
-    //   console.log(loaded);
-    //   getForecast(response.data);
-    // }
   }
 
   function handleSubmit(event) {
@@ -87,9 +85,7 @@ function Weather() {
       </div>
     </form>
   );
-  useEffect(() => {
-    getCurrentCityWeather("Lisbon");
-  }, []);
+
   return (
     <div className="container">
       <div className="weather">
