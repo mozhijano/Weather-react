@@ -11,9 +11,8 @@ function Weather() {
   ]);
   let [weather, setWeather] = useState({});
 
-  let apiKey = "a78075e9e54bb7f4634858f9d04d965c";
-
   function getCurrentCityWeather(cityName) {
+    let apiKey = "a78075e9e54bb7f4634858f9d04d965c";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
     axios.get(url).then(showTemperature);
   }
@@ -55,6 +54,7 @@ function Weather() {
   }
 
   useEffect(() => {
+    let apiKey = "a78075e9e54bb7f4634858f9d04d965c";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=Lisbon&appid=${apiKey}&units=metric`;
     axios.get(url).then(showTemperature);
   }, []);
