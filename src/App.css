@@ -169,3 +169,21 @@ body {
   text-decoration: none;
   padding-bottom: 30px;
 }
+
+.weather .temperature{
+  font-size : 40px;
+  color: black;
+  line-height: 64px;
+}
+
+.weather img{
+  width: 64px;
+  height: 64px;
+  margin-right: 5px;
+}
+
+.weather .unit{
+  position: relative;
+  top: -25px;
+}
+
