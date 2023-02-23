@@ -94,8 +94,11 @@ body {
   font-size: 1.2rem;
   line-height: 38px;
   height: 19px;
+  
 }
-
+.details span{
+  padding-left: 3px;
+}
 .details::first-letter {
   text-transform: capitalize;
 }
@@ -171,7 +174,7 @@ body {
 }
 
 .weather .temperature{
-  font-size : 40px;
+  font-size : 56px;
   color: black;
   line-height: 64px;
 }

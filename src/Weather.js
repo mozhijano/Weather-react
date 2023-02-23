@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherTemperature from "./WeatherTempreture";
+import ForecastWeather from "./ForecastWeather";
 import "./App.css";
 
 function Weather(props) {
@@ -49,8 +50,10 @@ function Weather(props) {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      //  response.data.weather[0].icon,
       description: response.data.weather[0].description,
       currentDay: response.data.dt,
+      forecast: response.data.coord,
     });
   }
 
@@ -120,7 +123,10 @@ function Weather(props) {
                 </div>
               </div>
               <div className="row">
-                <div className="col details" id="weather-description">
+                <div
+                  className="col details text-capitalize"
+                  id="weather-description"
+                >
                   {weather.description}
                 </div>
               </div>
@@ -130,6 +136,7 @@ function Weather(props) {
             <div className="col-6 mt-3">
               <div className="d-flex">
                 <div>
+                  {/* <WeatherIcon code={weather.icon} size={52} /> */}
                   <img src={weather.icon} alt={weather.description} />
                 </div>
                 <div>
@@ -157,14 +164,16 @@ function Weather(props) {
             </div>
           </div>
 
-          <div id="forecast" className="mt-5"></div>
+          <div id="forecast" className="mt-5">
+            <ForecastWeather forecast={weather.forecast} />
+          </div>
           <div className="footer">
             <a
               href="https://github.com/mozhijano/Weather-react"
               target="_blank"
               rel="noreferrer"
             >
-              Open-source code
+              Open-source code{" "}
             </a>
             by Mozhgan Janoosepah
           </div>

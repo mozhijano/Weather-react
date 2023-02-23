@@ -1,0 +1,9 @@
+.ForecastWeather .ForecastWeather-detail{
+    color: #000;
+    text-align: center;
+}
+
+.ForecastWeather .ForecastWeather-detail-minTemp{
+    opacity: 0.6;
+    padding-left: 12px;
+}
